@@ -1,0 +1,91 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>html event</title>
+</head>
+<body style="background-color: #414141; color:aliceblue;">
+    <h2>Amazing image</h2>
+    <div >
+        <ul id="images">
+            <li><img width="200px" id="photoshop" src="https://images.pexels.com/photos/3561339/pexels-photo-3561339.jpeg?auto=compress&cs=tinysrgb&w=1600&lazy=load" alt="photoshop"></li>
+            <li><img width="200px" id="japan" src="https://images.pexels.com/photos/3532553/pexels-photo-3532553.jpeg?auto=compress&cs=tinysrgb&w=1600&lazy=load" alt=""></li>
+            <li><img width="200px" id="river" src="https://images.pexels.com/photos/3532551/pexels-photo-3532551.jpeg?auto=compress&cs=tinysrgb&w=1600&lazy=load" alt=""></li>
+            <li><img width="200px" id="owl" src="https://images.pexels.com/photos/3532552/pexels-photo-3532552.jpeg?auto=compress&cs=tinysrgb&w=1600&lazy=load" alt="" ></li>
+            <li><img width="200px" id="prayer" src="https://images.pexels.com/photos/2522671/pexels-photo-2522671.jpeg?auto=compress&cs=tinysrgb&w=1600&lazy=load" alt=""></li>
+            <li><a style="color: aliceblue;" href="https://google.com" id="google">Google</a></li>
+        </ul>
+   </div>
+    
+</body>
+<script>
+    // document.getElementById('owl').onclick = function(){
+    //     alert("owl clicked")
+    // } bad habit dont use thhat 
+
+    // document.getElementById('owl').addEventListener('click', function(e){
+    //     console.log(e);
+    //    // alert("owl clicked again")
+    // }, false)//bydefult false hota hai 
+//type of events , timestamp , defultPrevented , traget , toElement , srcElement , currentTarget , clientX , clientY , ScreenX, screenY
+//altKEy , ctrlKey , shiftKey , keyCode ,  
+//HW ----> karna hai 
+
+    //attachEvent() use in early time 
+    //jQuery -- .on event listner bhi hota hai 
+
+    //EventPropogation 
+    // its two context 
+    // 1)--> event bubbling 2)--> event capturing
+//    document.getElementById('images').addEventListener('click', function(e){
+// console.log("clicked inside the Ul");
+//    },false)
+
+//    document.getElementById('owl').addEventListener('owl click', function(e){
+// console.log("owl clicked");
+//    },false)
+//bubbleing up neche se upper jata hia
+//jo bhi script eleemtns ko rap kar raahi hai inside se ouside thats called bubbling 
+
+
+//capturing 
+// document.getElementById('images').addEventListener('click', function(e){
+// console.log("clicked inside the Ul");
+//    },true)
+
+//    document.getElementById('owl').addEventListener('owl click', function(e){
+// console.log("owl clicked");
+//    },ture)//capturing top to bottom jata hai  
+// document.getElementById('images').addEventListener('click', function(e){
+// console.log("clicked inside the Ul");
+//    },false)
+
+//    document.getElementById('owl').addEventListener('owl click', function(e){
+// console.log("owl clicked");
+// e.stopPropagation()//stop the propogation 
+//    },false)
+
+//    //prevent defult 
+//    document.getElementById('go0gle').addEventListener('click', function(e){
+    
+//     e.preventDefault();
+//     e.stopPropagation()//bubbling ni hogi 
+
+//     console.log("go0gle clicked");
+//    }, false)
+document.querySelector('#images').addEventListener('click', function(e){
+//onsole.log(e.target);//kis target se ye event occure ho raha hai 
+console.log(e.target.tagName);
+if(e.target.tagName === 'IMG'){
+    let removeIt = e.target.parentNode
+     removeIt.remove();
+}
+
+//owl remove 
+//removeIt.parentNode.removeChild(removeIt)
+//using that evrything lost 
+
+}, false)
+</script>
+</html>
