@@ -1,0 +1,33 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+<body style="background-color: #212121;">
+    0	UNSENT	Client has been created. open() not called yet.
+1	OPENED	open() has been called.
+2	HEADERS_RECEIVED	send() has been called, and headers and status are available.
+3	LOADING	Downloading; responseText holds partial data.
+4	DONE	The operation is complete.
+</body>
+<script>
+//AJAX request
+const requestUrl =  'https://api.github.com/users/hiteshchodhary'
+ const xhr = new XMLHttpRequest()
+ xhr.open('GET', requestUrl)//method, string two para
+// console.log("HERE");//chaal raha hai 
+xhr.onreadystatechange = function(){//track a request 
+    console.log(xhr.readyState);// 1print hogi
+    if(xhr.readyState === 4){
+        const data = JSON.parse(this.responseText)//json paras covert object 
+        console.log(data.follower);//ni aa raha hai how to function konwn response tag hai in case use this 
+    } //jab bhi reponse ata hai url se string ata hai 
+}//continue moniter
+
+xhr.send();//request change 
+
+</script>
+</html>
+//conole.log ---> tech hai or ni bhi hai and its debugger tool hai js me 
