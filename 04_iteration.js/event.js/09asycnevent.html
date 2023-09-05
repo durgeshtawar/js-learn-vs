@@ -1,0 +1,29 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+<body>
+    <h1>cahi or code</h1>
+    <button id="stop">Stop</button>
+    
+</body>
+<script>
+    const syAditya = function(){
+        console.log("Aditya");
+    }
+    //document.querySelector('h1').innerHTML= "BEST coder of the year "//change heading 
+    const cahngeText = function(){
+        document.querySelector('h1').innerHTML = "Best coder of thr year"
+    }
+ const chngeme= setTimeout(cahngeText, 2000)//refernce dena hai 
+   // clearTimeout(chngeme)//isko referance chaiye 
+   document.querySelector('#stop').addEventListener('click', function(){
+    clearTimeout(cahngeText)
+    console.log("Stoped");
+   })
+    //call api and its a method and how tostope time 
+</script>
+</html>

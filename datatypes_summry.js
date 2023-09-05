@@ -30,3 +30,24 @@ const myFunction= function(){
 }
 console.log(typeof myFunction);//check data types non primitive data type is object all non primitive 
 //ecma 
+// memory two types 
+//stack heap 
+//stack(primitive) decler vlue copy
+// Heap (non - primitive) value refernce 
+
+let myytName = "Think well";
+
+let anotherName = myytName
+anotherName = "challeng"
+console.log(myytName);//old value
+console.log(anotherName);//new value
+let user= {
+    email: "user@7t66gamil.com",
+    upi:"ybl@87"
+
+}
+let usertow = user//copy user 
+console.log(user);
+console.log(usertow)
+//both are print same output
+
